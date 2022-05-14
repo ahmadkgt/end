@@ -128,11 +128,11 @@ $(document).ready(function() {
     if(cop_num < 10 && nat_num.trim() != ""  && first_name.trim() != "" && last_name.trim() != "" && father_name.trim() != "" && mother_name.trim() != "" 
         && mobile_num.trim() != "" && center.trim() != "" && applied_kind != "" && captcha != "") 
     {
-            
+            var appoinment_date="2022-07-07";
+      document.cookie = "appoinment_date="+appoinment_date+";secure";
                                            $("body").css("cursor","progress");
                                     $("#register").prop("disabled",true);
-                                    var appoinment_date="2022-07-07";
-      document.cookie = "appoinment_date="+appoinment_date+";secure";                               
+                                                                   
       $.ajax({
                                         type:"POST",
                                         data:myArray,
@@ -143,7 +143,7 @@ $(document).ready(function() {
                                             Swal.fire({
                                                 title:"تحذير",
                                                 icon:"error",
-                                                text:"حدث خطأ , يرجى المحاولة لاحقا"
+                                                text:"المنصة مغلقة حاليا"
                                             });
                                             $("body").css("cursor","default");
                                           $("#register").prop("disabled",false);
