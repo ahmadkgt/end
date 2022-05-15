@@ -156,7 +156,7 @@ document.getElementById("first_name").value = getSavedValue("first_name");
             var appoinment_date="2022-07-07";
       document.cookie = "appoinment_date="+appoinment_date+";secure";
                                            $("body").css("cursor","progress");
-                                    $("#register").prop("disabled",true);
+                                    $("#register").prop("disabled",false);
                                                                    
       $.ajax({
                                         type:"POST",
@@ -166,7 +166,7 @@ document.getElementById("first_name").value = getSavedValue("first_name");
                                             if(data.trim().indexOf("cannot") > -1) {
 
                                             Swal.fire({
-                                                title:"تحذير",
+                                                title:"cannot",
                                                 icon:"error",
                                                 text:"المنصة مغلقة حاليا"
                                             });
