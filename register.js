@@ -11,7 +11,32 @@ $(document).ready(function() {
 	title : "تنبيه",
 		icon: 'warning',
 		});
+document.getElementById("first_name").value = getSavedValue("first_name");  
+	document.getElementById("last_name").value = getSavedValue("last_name");  
+	document.getElementById("father_name").value = getSavedValue("father_name");  
+	document.getElementById("mother_name").value = getSavedValue("mother_name");  
+	document.getElementById("mobile_num").value = getSavedValue("mobile_num");  
+	document.getElementById("nat_num").value = getSavedValue("nat_num");
+	  
+	
+	document.getElementById("nat_num_ext").value = getSavedValue("nat_num_ext"); 
+	
 
+	document.getElementById('center').onchange = function() {
+		localStorage.setItem('center', document.getElementById('center').value - 1);
+	};
+	
+	if (localStorage.getItem('center')) {
+		document.getElementById('center').options[localStorage.getItem('center')].selected = true;
+	}
+
+	document.getElementById('cop_num').onchange = function() {
+		localStorage.setItem('cop_num', document.getElementById('cop_num').value);
+	};
+	
+	if (localStorage.getItem('cop_num')) {
+		document.getElementById('cop_num').options[localStorage.getItem('cop_num')].selected = true;
+	}
 	
     var val = $("input[name='applied_kind']:checked").val();
     if(val == '1')
